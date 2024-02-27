@@ -1,13 +1,9 @@
 version: '3.8'
 
 services:
-  chatgpt-minimal:
+  subject-matter-assistant-client:
     build: .
     ports:
       - "3000:3000"
     environment:
-      - OPENAI_API_BASE_URL=
-      - OPENAI_API_KEY=
-      - AZURE_OPENAI_API_BASE_URL=
-      - AZURE_OPENAI_API_KEY=
-      - AZURE_OPENAI_DEPLOYMENT=
+      - SERVER_URL=http://subject_matter_assistant:5000/ask-student-office
