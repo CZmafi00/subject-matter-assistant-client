@@ -1,95 +1,44 @@
-# ChatGPT Minimal
+# Subject Matter Assistant Client
 
-English | [简体中文](./README.zh-CN.md)
+This project is part of a graduation thesis for [Algebra University College](https://www.algebra.hr/visoko-uciliste/en/). It is a client application for the Subject Matter Assistant, originally forked from [chat-gpt-minimal](https://github.com/blrchen/chatgpt-minimal).
 
-## Demo
+## Overview
 
-Visit [ChatGPT Minimal Demo Site](https://chatgpt-minimal.vercel.app)
+The Subject Matter Assistant Client is designed to provide a user interface for interacting with the Subject Matter Assistant. It uses the neat and simple Next.js solution from [chat-gpt-minimal](https://github.com/blrchen/chatgpt-minimal) for presentation and testing purposes.
+
+## Acknowledgments
+
+Special thanks to the author of [Blair Chen blrchen](https://github.com/search?q=blrchen&type=users) for providing the base solution for the community.
 
 ## Features
 
-ChatGPT Minimal is a lightweight chatbot built using Next.js and the OpenAI Streaming API for the GPT-3.5 model. It supports both OpenAI and Azure OpenAI accounts.
+- User-friendly interface for interacting with the Subject Matter Assistant.
+- Docker support
 
-Components:
-- Next.js v13
-- OpenAI Streaming API (GPT-3.5 model, gpt-3.5-turbo)
-- API Routes
-- Chatbot UI with React and Ant Design
+## Getting Started
 
-![demo](./docs/images/demo.jpg)
+### Prerequisites
 
-For a full-featured ChatGPT UI, visit [ChatGPT Lite](https://github.com/blrchen/chatgpt-lite).
+Before you begin, ensure you have the following:
 
-## Prerequisites
+- Node.js and npm installed.
+- Access to the Subject Matter Assistant server.
 
-You need an OpenAI or Azure OpenAI account.
+### Installation
 
-## Deployment
+1. Clone the repository:
 
-Refer to the [Environment Variables](#environment-variables) section for required environment variables.
+   ```bash
+   git clone https://github.com/CZmafi00/subject-matter-assistant-client
 
-### Deploy on Vercel
+### Build and run docker image
 
-Click the button below to deploy on Vercel:
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fblrchen%2Fchatgpt-minimal&project-name=chatgpt-minimal&framework=nextjs&repository-name=chatgpt-minimal)
+1. Build docker image
 
-### Deploy with Docker
+   ```bash
+   docker build -t <image-tag> --progress=plain .
 
-For OpenAI account users:
+2. Run docker image
 
-```
-docker run -d -p 3000:3000 \
-   -e OPENAI_API_KEY="<REPLACE-ME>" \
-   blrchen/chatgpt-minimal
-```
-
-For Azure OpenAI account users:
-
-```
-docker run -d -p 3000:3000 \
-   -e AZURE_OPENAI_API_BASE_URL="<REPLACE-ME>" \
-   -e AZURE_OPENAI_API_KEY="<REPLACE-ME>" \
-   -e AZURE_OPENAI_DEPLOYMENT="<REPLACE-ME>" \
-   blrchen/chatgpt-minimal
-```
-
-## Development
-
-### Running Locally
-
-1. Install NodeJS 18.
-2. Clone the repository.
-3. Install dependencies with `npm install`.
-4. Copy `.env.example` to `.env.local` and modify environment variables accordingly.
-5. Start the application using `npm run dev`.
-6. Visit `http://localhost:3000` in your browser.
-
-### Running Locally with Docker
-
-1. Clone the repository and navigate to the root directory.
-2. Update the `OPENAI_API_KEY` environment variable in the `docker-compose.yml` file.
-3. Build the application using `docker-compose build .`.
-4. Start the application by running `docker-compose up -d`.
-
-## Environment Variables
-
-Required environment variables:
-
-For OpenAI account:
-
-| Name                | Description                                                                                             | Default Value            |
-|---------------------|---------------------------------------------------------------------------------------------------------|--------------------------|
-| OPENAI_API_BASE_URL | Use if you intend to use a reverse proxy for `api.openai.com`.                                          | `https://api.openai.com` |
-| OPENAI_API_KEY      | Secret key string obtained from the [OpenAI API website](https://platform.openai.com/account/api-keys). |
-
-For Azure OpenAI account:
-
-| Name                      | Description                                    |
-|---------------------------|------------------------------------------------|
-| AZURE_OPENAI_API_BASE_URL | Endpoint (e.g., https://xxx.openai.azure.com). |
-| AZURE_OPENAI_API_KEY      | Key                                            |
-| AZURE_OPENAI_DEPLOYMENT   | Model deployment name                          |
-
-## Contribution
-
-We welcome PRs of all sizes.
+   ```bash
+   docker run -d -p <local-pc-port>:3000 -e SERVER_URL=<server-url> <image-tag>
