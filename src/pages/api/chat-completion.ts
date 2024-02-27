@@ -35,7 +35,7 @@ const handler = async (req: Request, res: NextApiResponse) => {
     return new Response(`<div>${data["answer"]}</div><h3 class="source-header">Izvor</h3><div class="source-article">${data["context"]}</div>`)
   } catch (error) {
     console.log("Error: ", error);
-    return new Response(`<div><h4 class="error-title">Došlo je do pogreške prilikom obrade upita. Molim Vas pokušajte ponovno.</h4><div class="error-message-box">${error}</div></div>`)
+    return new Response(`<div><h4 class="error-header">Došlo je do pogreške prilikom obrade upita. Molim Vas pokušajte ponovno.</h4><div class="error-message">${error}</div></div>`)
   }
 }
 
