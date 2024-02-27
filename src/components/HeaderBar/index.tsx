@@ -15,15 +15,15 @@ const HeaderBar = () => {
       <Header className={styles.header}>
         <div className={styles.logoBar}>
           <Link href="/">
-            <img alt="logo" src="/logo192.png" />
-            <h1>ChatGPT Minimal</h1>
+          <img alt="logo" src="https://yt3.googleusercontent.com/ytc/AIf8zZSNx8f-qz9gvMIyUHgrT9fIubxl4ZbRyaygUita9w=s900-c-k-c0x00ffffff-no-rj" />
+            <h1>Student office assistant</h1>
           </Link>
         </div>
         <Space className={styles.right} size={0}>
           <span className={styles.right}>
             <Link
               className={styles.action}
-              href="https://github.com/blrchen/chatgpt-minimal"
+              href="https://github.com/CZmafi00/subject-matter-assistant-client"
               target="_blank"
             >
               <GithubOutlined />
